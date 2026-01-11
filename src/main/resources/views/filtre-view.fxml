@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ScrollPane?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.rendezvousmanager.controllers.FiltreController"
+      fitToWidth="true">
+    <stylesheets>
+        <URL value="@../styles.css" />
+    </stylesheets>
+    
+    <VBox spacing="15" style="-fx-padding: 20px;">
+        <HBox alignment="TOP_RIGHT" style="-fx-padding: 10px;">
+            <Button text="🏠 Accueil" onAction="#goHome" styleClass="btn-home" />
+        </HBox>
+
+        <VBox spacing="20" style="-fx-background-color: #f8f9fa; -fx-background-radius: 10px;">
+            <Label text="🔍 Filtrage des Rendez-vous" styleClass="label-title" />
+            <Label text="Trouvez rapidement les rendez-vous qui vous intéressent" style="-fx-text-fill: #666; -fx-font-size: 14px;" />
+        </VBox>
+        
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <Label text="🔍 Critères de recherche" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <VBox spacing="5">
+                    <Label text="Client" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+                    <TextField fx:id="clientField" promptText="Nom du client" prefWidth="200" style="-fx-background-color: #f8f9fa; -fx-border-color: #e0e0e0; -fx-border-radius: 5px; -fx-padding: 8px;"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Lieu" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+                    <TextField fx:id="lieuField" promptText="Nom du lieu" prefWidth="200" style="-fx-background-color: #f8f9fa; -fx-border-color: #e0e0e0; -fx-border-radius: 5px; -fx-padding: 8px;"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Date" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+                    <DatePicker fx:id="datePicker" prefWidth="200" style="-fx-background-color: #f8f9fa; -fx-border-color: #e0e0e0; -fx-border-radius: 5px; -fx-padding: 8px;"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10" styleClass="hbox-buttons">
+                <Button text="🔍 Filtrer" onAction="#applyFilter" styleClass="btn-primary" />
+                <Button text="🔄 Réinitialiser" onAction="#resetFilter" styleClass="btn-warning" />
+            </HBox>
+        </VBox>
+
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <Label text="📋 Résultats du filtrage" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+            <TableView fx:id="filteredTable" prefHeight="250" prefWidth="800" style="-fx-background-color: transparent; -fx-border-color: #e0e0e0; -fx-border-radius: 5px;">
+                <columns>
+                    <TableColumn text="ID" fx:id="idColumn" prefWidth="50"/>
+                    <TableColumn text="Client" fx:id="clientColumn" prefWidth="200"/>
+                    <TableColumn text="Lieu" fx:id="lieuColumn" prefWidth="200"/>
+                    <TableColumn text="Date" fx:id="dateColumn" prefWidth="300"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </VBox>
+</ScrollPane>

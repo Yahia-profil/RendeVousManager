@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ScrollPane?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.rendezvousmanager.controllers.LieuController"
+      fitToWidth="true">
+    <stylesheets>
+        <URL value="@../styles.css" />
+    </stylesheets>
+    
+    <VBox spacing="15" style="-fx-padding: 20px;">
+        <HBox alignment="TOP_RIGHT" style="-fx-padding: 10px;">
+            <Button text="🏠 Accueil" onAction="#goHome" styleClass="btn-home" />
+        </HBox>
+
+        <VBox spacing="20" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 10px;">
+            <Label text="📍 Gestion des Lieux" styleClass="label-title" />
+            <Label text="Gérez les lieux de rendez-vous" style="-fx-text-fill: #666; -fx-font-size: 14px;" />
+        </VBox>
+
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <Label text="📋 Liste des Lieux" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+            <TableView fx:id="lieuTable" prefHeight="200" prefWidth="700" style="-fx-background-color: transparent; -fx-border-color: #e0e0e0; -fx-border-radius: 5px;">
+                <columns>
+                    <TableColumn text="ID" fx:id="idColumn" prefWidth="50"/>
+                    <TableColumn text="Nom" fx:id="nomColumn" prefWidth="200"/>
+                    <TableColumn text="Adresse" fx:id="adresseColumn" prefWidth="400"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <Label text="✏️ Ajouter/Modifier un Lieu" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <VBox spacing="5">
+                    <Label text="Nom du lieu" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+                    <TextField fx:id="nomField" promptText="Entrez le nom" prefWidth="250" style="-fx-background-color: #f8f9fa; -fx-border-color: #e0e0e0; -fx-border-radius: 5px; -fx-padding: 8px;"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Adresse" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+                    <TextField fx:id="adresseField" promptText="Entrez l'adresse" prefWidth="350" style="-fx-background-color: #f8f9fa; -fx-border-color: #e0e0e0; -fx-border-radius: 5px; -fx-padding: 8px;"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10" styleClass="hbox-buttons">
+                <Button text="➕ Ajouter" onAction="#addLieu" styleClass="btn-primary" />
+                <Button text="✏️ Modifier" onAction="#updateLieu" styleClass="btn-secondary" />
+                <Button text="🗑️ Supprimer" onAction="#deleteLieu" styleClass="btn-danger" />
+            </HBox>
+        </VBox>
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/rendezvousmanager/controllers/HomeController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/rendezvousmanager/dao/ClientDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/rendezvousmanager/dao/LieuDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/rendezvousmanager/dao/RendezVousDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/rendezvousmanager/dao/UtilisateurDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/rendezvousmanager/services/ClientService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/rendezvousmanager/services/LieuService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/rendezvousmanager/services/RendezVousService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/rendezvousmanager/services/UtilisateurService.java" charset="UTF-8" />
+  </component>
+</project>

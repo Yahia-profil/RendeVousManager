@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rendezvousmanager.controllers.StatistiquesController" fitToWidth="true">
+    <stylesheets>
+        <URL value="@../styles.css" />
+    </stylesheets>
+    
+    <VBox spacing="15" style="-fx-padding: 20px;">
+        <HBox alignment="TOP_RIGHT" style="-fx-padding: 10px;">
+            <Button text="🏠 Accueil" onAction="#goHome" styleClass="btn-home" />
+        </HBox>
+        
+        <Label text="📊 Graphiques et Statistiques" styleClass="label-title" />
+        
+        <VBox spacing="20" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 10px;" alignment="CENTER">
+            <Label text="📈 Statistiques Générales" styleClass="label-subtitle" />
+            
+            <HBox spacing="15" alignment="CENTER" style="-fx-padding: 20px;">
+                <VBox spacing="5" alignment="CENTER" style="-fx-background-color: white; -fx-padding: 15px; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                    <Label text="👥" style="-fx-font-size: 24px;" />
+                    <Label fx:id="totalClientsLabel" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2196F3;" />
+                    <Label text="Clients" style="-fx-font-size: 14px; -fx-text-fill: #666;" />
+                </VBox>
+                <VBox spacing="5" alignment="CENTER" style="-fx-background-color: white; -fx-padding: 15px; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                    <Label text="👤" style="-fx-font-size: 24px;" />
+                    <Label fx:id="totalUsersLabel" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #4CAF50;" />
+                    <Label text="Utilisateurs" style="-fx-font-size: 14px; -fx-text-fill: #666;" />
+                </VBox>
+                <VBox spacing="5" alignment="CENTER" style="-fx-background-color: white; -fx-padding: 15px; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                    <Label text="📍" style="-fx-font-size: 24px;" />
+                    <Label fx:id="totalLieuxLabel" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #FF9800;" />
+                    <Label text="Lieux" style="-fx-font-size: 14px; -fx-text-fill: #666;" />
+                </VBox>
+                <VBox spacing="5" alignment="CENTER" style="-fx-background-color: white; -fx-padding: 15px; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                    <Label text="📅" style="-fx-font-size: 24px;" />
+                    <Label fx:id="totalRdvLabel" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #9C27B0;" />
+                    <Label text="Rendez-vous" style="-fx-font-size: 14px; -fx-text-fill: #666;" />
+                </VBox>
+            </HBox>
+            
+            <HBox spacing="15" alignment="CENTER" style="-fx-padding: 20px;">
+                <VBox spacing="10" alignment="CENTER" style="-fx-background-color: white; -fx-padding: 20px; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2); -fx-min-width: 300px; -fx-pref-width: 300px;">
+                    <Label text="🏆 Top 5 Lieux" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+                    <VBox fx:id="topLieuxContainer" spacing="5" alignment="CENTER_LEFT" style="-fx-padding: 10px;"/>
+                </VBox>
+                <VBox spacing="10" alignment="CENTER" style="-fx-background-color: white; -fx-padding: 20px; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2); -fx-min-width: 300px; -fx-pref-width: 300px;">
+                    <Label text="⭐ Top 5 Clients" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+                    <VBox fx:id="topClientsContainer" spacing="5" alignment="CENTER_LEFT" style="-fx-padding: 10px;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </VBox>
+</ScrollPane>

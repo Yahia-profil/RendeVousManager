@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ScrollPane?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rendezvousmanager.controllers.HomeController" fitToWidth="true">
+    <stylesheets>
+        <URL value="@../styles.css" />
+    </stylesheets>
+    
+    <VBox spacing="15" style="-fx-padding: 20px;">
+        <VBox spacing="20" style="-fx-background-color: #f8f9fa; -fx-padding: 30px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <Label text="📅 RendezVous Manager" styleClass="label-title" />
+            <Label text="Gestion complète de vos rendez-vous" styleClass="label-subtitle" />
+        </VBox>
+        
+        <VBox spacing="20" style="-fx-background-color: white; -fx-padding: 30px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+            <Label text="🚀 Menu Principal" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+            <Label text="Choisissez une section pour commencer" style="-fx-text-fill: #666; -fx-font-size: 14px;" />
+            
+            <VBox spacing="20">
+                <HBox spacing="20" alignment="CENTER" style="-fx-padding: 10px;">
+                    <VBox spacing="8" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 8px; -fx-min-width: 180px; -fx-pref-width: 180px;">
+                        <Label text="👥" style="-fx-font-size: 32px;" />
+                        <Button text="Clients" onAction="#goToClients" styleClass="btn-primary" style="-fx-pref-width: 140px; -fx-max-width: 140px;" />
+                    </VBox>
+                    <VBox spacing="8" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 8px; -fx-min-width: 180px; -fx-pref-width: 180px;">
+                        <Label text="👤" style="-fx-font-size: 32px;" />
+                        <Button text="Utilisateurs" onAction="#goToUtilisateurs" styleClass="btn-primary" style="-fx-pref-width: 140px; -fx-max-width: 140px;" />
+                    </VBox>
+                    <VBox spacing="8" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 8px; -fx-min-width: 180px; -fx-pref-width: 180px;">
+                        <Label text="📋" style="-fx-font-size: 32px;" />
+                        <Button text="Catégories" onAction="#goToCategories" styleClass="btn-secondary" style="-fx-pref-width: 140px; -fx-max-width: 140px;" />
+                    </VBox>
+                </HBox>
+                <HBox spacing="20" alignment="CENTER" style="-fx-padding: 10px;">
+                    <VBox spacing="8" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 8px; -fx-min-width: 180px; -fx-pref-width: 180px;">
+                        <Label text="📍" style="-fx-font-size: 32px;" />
+                        <Button text="Lieux" onAction="#goToLieux" styleClass="btn-secondary" style="-fx-pref-width: 140px; -fx-max-width: 140px;" />
+                    </VBox>
+                    <VBox spacing="8" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 8px; -fx-min-width: 180px; -fx-pref-width: 180px;">
+                        <Label text="📅" style="-fx-font-size: 32px;" />
+                        <Button text="RendezVous" onAction="#goToRendezVous" styleClass="btn-primary" style="-fx-pref-width: 140px; -fx-max-width: 140px;" />
+                    </VBox>
+                    <VBox spacing="8" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 8px; -fx-min-width: 180px; -fx-pref-width: 180px;">
+                        <Label text="🔍" style="-fx-font-size: 32px;" />
+                        <Button text="Filtres" onAction="#goToFiltres" styleClass="btn-warning" style="-fx-pref-width: 140px; -fx-max-width: 140px;" />
+                    </VBox>
+                </HBox>
+                <HBox spacing="20" alignment="CENTER" style="-fx-padding: 10px;">
+                    <VBox spacing="8" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 8px; -fx-min-width: 180px; -fx-pref-width: 180px;">
+                        <Label text="📊" style="-fx-font-size: 32px;" />
+                        <Button text="Statistiques" onAction="#goToStatistiques" styleClass="btn-secondary" style="-fx-pref-width: 140px; -fx-max-width: 140px;" />
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+    </VBox>
+</ScrollPane>
