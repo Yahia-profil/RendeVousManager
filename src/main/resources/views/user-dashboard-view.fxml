@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rendezvousmanager.controllers.UserDashboardController" spacing="20" style="-fx-padding: 20px;">
+    <!-- Header User -->
+    <VBox spacing="15" style="-fx-background-color: #3498db; -fx-padding: 30px; -fx-background-radius: 10px;">
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <Label text="👤" style="-fx-font-size: 32px; -fx-text-fill: white;" />
+            <VBox spacing="5">
+                <Label fx:id="welcomeLabel" text="Bienvenue Utilisateur" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+                <Label text="Espace personnel" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;" />
+            </VBox>
+        </HBox>
+        <HBox spacing="15" alignment="CENTER_RIGHT">
+            <Button fx:id="logoutButton" text="🚪 Déconnexion" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-height: 40px; -fx-border-radius: 5px;" onAction="#handleLogout" />
+        </HBox>
+    </VBox>
+    
+    <!-- Menu User limité -->
+    <VBox spacing="20" style="-fx-background-color: white; -fx-padding: 30px; -fx-background-radius: 10px; -fx-border-color: #ddd; -fx-border-width: 1px;">
+        <Label text="📋 Mes fonctionnalités" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+        
+        <VBox spacing="20">
+            <HBox spacing="20" alignment="CENTER" style="-fx-padding: 10px;">
+                <VBox spacing="8" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 8px; -fx-min-width: 180px; -fx-pref-width: 180px; -fx-border-color: #ddd; -fx-border-width: 1px;">
+                    <Label text="👥" style="-fx-font-size: 32px; -fx-text-fill: #2c3e50;" />
+                    <Button text="Clients" onAction="#goToClients" style="-fx-pref-height: 45px; -fx-font-size: 16px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" />
+                </VBox>
+                <VBox spacing="8" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 8px; -fx-min-width: 180px; -fx-pref-width: 180px; -fx-border-color: #ddd; -fx-border-width: 1px;">
+                    <Label text="📅" style="-fx-font-size: 32px; -fx-text-fill: #2c3e50;" />
+                    <Button text="RendezVous" onAction="#goToRendezVous" style="-fx-pref-height: 45px; -fx-font-size: 16px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" />
+                </VBox>
+                <VBox spacing="8" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 20px; -fx-background-radius: 8px; -fx-min-width: 180px; -fx-pref-width: 180px; -fx-border-color: #ddd; -fx-border-width: 1px;">
+                    <Label text="🔍" style="-fx-font-size: 32px; -fx-text-fill: #2c3e50;" />
+                    <Button text="Filtres" onAction="#goToFiltres" style="-fx-pref-height: 45px; -fx-font-size: 16px; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" />
+                </VBox>
+            </HBox>
+        </VBox>
+        
+        <!-- Message d'information -->
+        <VBox spacing="10" style="-fx-background-color: #ecf0f1; -fx-padding: 20px; -fx-background-radius: 8px; -fx-border-color: #ddd; -fx-border-width: 1px;">
+            <Label text="ℹ️ Accès limité" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            <Label text="En tant qu'utilisateur simple, vous avez accès aux fonctionnalités de base. Pour accéder à toutes les fonctionnalités, contactez un administrateur." style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" wrapText="true" />
+        </VBox>
+    </VBox>
+</VBox>

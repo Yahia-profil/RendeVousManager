@@ -85,6 +85,10 @@ public class CategorieController {
 
     @FXML
     private void goHome() {
-        SceneManager.navigateTo("home-view");
+        if (com.example.rendezvousmanager.models.Session.isAdmin()) {
+            SceneManager.navigateTo("admin-dashboard-view");
+        } else {
+            SceneManager.navigateTo("user-dashboard-view");
+        }
     }
 }

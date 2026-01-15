@@ -74,6 +74,17 @@
     -fx-background-color: linear-gradient(to bottom, #f57c00, #ef6c00);
 }
 
+.btn-info {
+    -fx-background-color: linear-gradient(to bottom, #17a2b8, #138496);
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-min-height: 50px;
+}
+
+.btn-info:hover {
+    -fx-background-color: linear-gradient(to bottom, #138496, #117a8b);
+}
+
 /* Bouton d'accueil séparé */
 .btn-home {
     -fx-background-color: linear-gradient(to bottom, #9C27B0, #7B1FA2);

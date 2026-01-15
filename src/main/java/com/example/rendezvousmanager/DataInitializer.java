@@ -17,6 +17,12 @@ public class DataInitializer {
         LieuService lieuService = new LieuService();
         RendezVousService rendezVousService = new RendezVousService();
         
+        // Vérifier si les données existent déjà
+        if (hasExistingData(clientService, utilisateurService, categorieService, lieuService)) {
+            initialized = true;
+            return;
+        }
+        
         // Initialiser les Clients
         clientService.addClient(new Client("Dupont", "Jean"));
         clientService.addClient(new Client("Martin", "Marie"));
@@ -27,9 +33,9 @@ public class DataInitializer {
         
         // Initialiser les Utilisateurs
         utilisateurService.addUtilisateur(new Utilisateur("Admin", "Système", "admin@rendezvous.com"));
+        utilisateurService.addUtilisateur(new Utilisateur("User", "Demo", "user@rendezvous.com"));
         utilisateurService.addUtilisateur(new Utilisateur("Alice", "Durand", "alice.durand@rendezvous.com"));
         utilisateurService.addUtilisateur(new Utilisateur("Bob", "Lefebvre", "bob.lefebvre@rendezvous.com"));
-        utilisateurService.addUtilisateur(new Utilisateur("Claire", "Moreau", "claire.moreau@rendezvous.com"));
         
         // Initialiser les Catégories
         categorieService.addCategorie(new CategorieRendezVous("Consultation", "Consultation médicale générale"));
@@ -74,5 +80,15 @@ public class DataInitializer {
         }
         
         initialized = true;
+    }
+    
+    private static boolean hasExistingData(ClientService clientService, 
+                                         UtilisateurService utilisateurService,
+                                         CategorieRendezVousService categorieService,
+                                         LieuService lieuService) {
+        return !clientService.getAllClients().isEmpty() ||
+               !utilisateurService.getAllUtilisateurs().isEmpty() ||
+               !categorieService.getAllCategories().isEmpty() ||
+               !lieuService.getAllLieux().isEmpty();
     }
 }

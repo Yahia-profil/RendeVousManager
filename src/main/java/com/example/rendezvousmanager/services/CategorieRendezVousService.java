@@ -1,17 +1,17 @@
 package com.example.rendezvousmanager.services;
 
-import com.example.rendezvousmanager.dao.CategorieRendezVousDAO;
+import com.example.rendezvousmanager.jdbc.CategorieRendezVousJDBC;
 import com.example.rendezvousmanager.models.CategorieRendezVous;
 import java.util.List;
 
 public class CategorieRendezVousService {
-    private final CategorieRendezVousDAO dao = com.example.rendezvousmanager.dao.DataManager.getCategorieDAO();
+    private final CategorieRendezVousJDBC jdbc = com.example.rendezvousmanager.dao.DataManager.getCategorieJDBC();
 
-    public List<CategorieRendezVous> getAllCategories() { return dao.getAll(); }
+    public List<CategorieRendezVous> getAllCategories() { return jdbc.getAll(); }
 
-    public void addCategorie(CategorieRendezVous c) { dao.add(c); }
+    public void addCategorie(CategorieRendezVous c) { jdbc.add(c); }
 
-    public void updateCategorie(CategorieRendezVous c) { dao.update(c); }
+    public void updateCategorie(CategorieRendezVous c) { jdbc.update(c); }
 
-    public void deleteCategorie(CategorieRendezVous c) { dao.delete(c); }
+    public void deleteCategorie(CategorieRendezVous c) { jdbc.delete(c); }
 }

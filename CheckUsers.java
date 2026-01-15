@@ -1,0 +1,43 @@
+import com.example.rendezvousmanager.database.DatabaseConnection;
+import com.example.rendezvousmanager.models.Utilisateur;
+import com.example.rendezvousmanager.services.UtilisateurService;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
+
+public class CheckUsers {
+    public static void main(String[] args) {
+        try {
+            Connection conn = DatabaseConnection.getConnection();
+            Statement stmt = conn.createStatement();
+            
+            System.out.println("=== UTILISATEURS DANS LA BASE DE DONNEES ===");
+            
+            ResultSet rs = stmt.executeQuery("SELECT id, nom, prenom, email FROM utilisateurs ORDER BY id");
+            
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nom = rs.getString("nom");
+                String prenom = rs.getString("prenom");
+                String email = rs.getString("email");
+                
+                System.out.println("ID: " + id + " | Nom: " + nom + " | Prénom: " + prenom + " | Email: " + email);
+                System.out.println("   Mot de passe: " + email.toLowerCase());
+                System.out.println();
+            }
+            
+            System.out.println("=== MOTS DE PASSE POUR LA CONNEXION ===");
+            System.out.println("Admin: admin@rendezvous.com / admin");
+            System.out.println("User: user@rendezvous.com / user");
+            System.out.println("Alice: alice.durand@rendezvous.com / alice.durand@rendezvous.com");
+            System.out.println("Bob: bob.lefebvre@rendezvous.com / bob.lefebvre@rendezvous.com");
+            
+            rs.close();
+            stmt.close();
+            conn.close();
+            
+        } catch (Exception e) {
+            System.err.println("Erreur: " + e.getMessage());
+        }
+    }
+}

@@ -1,17 +1,17 @@
 package com.example.rendezvousmanager.services;
 
-import com.example.rendezvousmanager.dao.LieuDAO;
+import com.example.rendezvousmanager.jdbc.LieuJDBC;
 import com.example.rendezvousmanager.models.Lieu;
 import java.util.List;
 
 public class LieuService {
-    private final LieuDAO dao = com.example.rendezvousmanager.dao.DataManager.getLieuDAO();
+    private final LieuJDBC jdbc = com.example.rendezvousmanager.dao.DataManager.getLieuJDBC();
 
-    public List<Lieu> getAllLieux() { return dao.getAll(); }
+    public List<Lieu> getAllLieux() { return jdbc.getAll(); }
 
-    public void addLieu(Lieu l) { dao.add(l); }
+    public void addLieu(Lieu l) { jdbc.add(l); }
 
-    public void updateLieu(Lieu l) { dao.update(l); }
+    public void updateLieu(Lieu l) { jdbc.update(l); }
 
-    public void deleteLieu(Lieu l) { dao.delete(l); }
+    public void deleteLieu(Lieu l) { jdbc.delete(l); }
 }
